@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title_suffix_full">Kyaw Khaing Tun - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', // Indigo 600 (Main Accent)
+                        'secondary': '#1e3a8a', // Blue 800 (Dark accent for contrast)
+                        'background': '#e5e7eb', // Gray 200 (Light background for contrast)
+                        'text-dark': '#1f2937', // Gray 800 (Main text color)
+                        'text-muted': '#4b5563', // Gray 600 (Muted text color)
+                        'glass-panel': 'rgba(255, 255, 255, 0.75)', // White semi-transparent
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth scrolling and hover effects */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Glassmorphism Effect */
+        .glass-card {
+            background-color: var(--tw-color-glass-panel, rgba(255, 255, 255, 0.75));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle light border */
+        }
+        .section-heading {
+            border-bottom: 3px solid #4f46e5;
+            display: inline-block;
+        }
+        /* Style for interactive elements */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.2); /* Shadow with dark accent */
+        }
+    </style>
+</head>
+<body class="bg-background text-text-dark font-sans transition-colors duration-500">
+
+    <header class="sticky top-0 z-50 glass-card shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-secondary hover:text-primary transition duration-300" data-i18n="nav_name">Kyaw Khaing Tun</a>
+            <div class="flex items-center space-x-4">
+                <div class="space-x-4 hidden md:flex">
+                    <a href="#about" data-i18n="nav_about" class="text-text-dark hover:text-primary transition duration-300">Vision</a>
+                    <a href="#skills" data-i18n="nav_skills" class="text-text-dark hover:text-primary transition duration-300">Skills</a>
+                    <a href="#projects" data-i18n="nav_projects" class="text-text-dark hover:text-primary transition duration-300">Projects</a>
+                    <a href="#contact" data-i18n="nav_contact" class="text-text-dark hover:text-primary transition duration-300">Contact</a>
+                </div>
+                <button id="languageToggle" class="px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-indigo-500 transition duration-300 shadow-md">
+                    JP
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                <div class="md:w-3/5 text-center md:text-left">
+                    <p data-i18n="hero_greeting" class="text-xl text-primary mb-2">Hello, I'm</p>
+                    <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight mb-4">
+                        <span data-i18n="hero_title" class="block text-secondary">Kyaw Khaing Tun</span>
+                        <span data-i18n="hero_subtitle" class="block text-text-muted text-4xl sm:text-6xl mt-2">AI Developer / Robotics Enthusiast</span>
+                    </h1>
+                    <p data-i18n="hero_bio" class="text-lg text-text-muted mb-8 max-w-xl mx-auto md:mx-0">
+                        Aspiring AI & Software Engineer focused on building interactive AI systems, robotics, and real-world automation tools that combine programming, sensors, and intelligent user experiences.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#projects" data-i18n="hero_btn_projects" class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                            View Projects
+                        </a>
+                        <a href="#contact" data-i18n="hero_btn_contact" class="inline-block px-8 py-3 text-secondary border border-secondary font-semibold rounded-lg hover:bg-primary hover:text-white transition duration-300 transform hover:scale-105">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-2/5 mt-10 md:mt-0 flex justify-center">
+                    <img src="profile.jpg" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/300x300/e5e7eb/4f46e5?text=AI+Dev'" 
+                        alt="Professional profile picture of Kyaw Khaing Tun" 
+                        class="rounded-full w-64 h-64 object-cover border-4 border-primary shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <h2 data-i18n="about_title" class="text-4xl font-bold mb-10 section-heading text-secondary">Vision & Background</h2>
+            <div class="glass-card p-8 rounded-xl shadow-2xl">
+                <p data-i18n="about_p1" class="text-lg mb-4 text-text-dark">
+                    Born in the Sagaing Region of Myanmar, I came to Japan to pursue advanced studies in IT at Kobe Denshi College. My journey taught me independence, creativity, and the importance of creating real-world, helpful solutions that benefit people.
+                </p>
+                <p data-i18n="about_p2" class="text-lg text-text-dark">
+                    My vision is to build AI systems that can see, understand, and communicate naturally, connecting physical robots with intelligent cloud systems. I believe the future belongs to AI that exists in the real world — not just in the cloud, but beside us.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <h2 data-i18n="skills_title" class="text-4xl font-bold mb-10 section-heading text-secondary">Core Expertise & Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-xl shadow-lg flex flex-col items-center card-hover transition duration-300">
+                    <svg class="w-10 h-10 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <h3 class="text-xl font-semibold text-secondary">Python, C, SQL</h3>
+                    <p class="text-text-muted text-sm text-center">Core Languages & Data</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-lg flex flex-col items-center card-hover transition duration-300">
+                    <svg class="w-10 h-10 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3 class="text-xl font-semibold text-secondary">AI/ML Models</h3>
+                    <p class="text-text-muted text-sm text-center">Gemini API, Face Recognition, MediaPipe, TTS/STT</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-lg flex flex-col items-center card-hover transition duration-300">
+                    <svg class="w-10 h-10 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-semibold text-secondary">Robotics/Embedded</h3>
+                    <p class="text-text-muted text-sm text-center">Arduino, ESP32-CAM, Raspberry Pi, STM32</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-lg flex flex-col items-center card-hover transition duration-300">
+                    <svg class="w-10 h-10 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-semibold text-secondary">Web & Cloud API</h3>
+                    <p class="text-text-muted text-sm text-center">HTML/JSON (Basic), Flask Server, JSON/SQLite</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <h2 data-i18n="project_title" class="text-4xl font-bold mb-10 section-heading text-secondary">Featured Project: SUZI AI & Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="glass-card rounded-xl shadow-xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://placehold.co/600x400/4f46e5/ffffff?text=SUZI+AI+Avatar" alt="SUZI AI" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 data-i18n="project1_title" class="text-2xl font-semibold text-secondary mb-2">SUZI AI — Bilingual Voice Assistant</h3>
+                        <p data-i18n="project1_desc" class="text-text-muted mb-4">A bilingual (English/Japanese) voice-based AI assistant with real-time face recognition memory, hand-tracking commands, emotion detection, and a cloud-connected information center system.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Gemini API</span>
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Python</span>
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Real-time Vision</span>
+                        </div>
+                        <a href="#" data-i18n="project1_link" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+                            See Core Features
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl shadow-xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=UI+Automation" alt="Interactive UI" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 data-i18n="project2_title" class="text-2xl font-semibold text-secondary mb-2">Interactive UI & Automation Tools</h3>
+                        <p data-i18n="project2_desc" class="text-text-muted mb-4">Development of interactive UI systems using Python (Tkinter), real-time camera overlays, and animated interfaces for information centers, restaurants, and business tools.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Python (Tkinter)</span>
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Video Processing</span>
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Digital Tools</span>
+                        </div>
+                        <a href="#" data-i18n="project2_link" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl shadow-xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=Drone+Proto" alt="Robotics Prototype" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 data-i18n="project3_title" class="text-2xl font-semibold text-secondary mb-2">Embedded AI & Robotics Prototypes</h3>
+                        <p data-i18n="project3_desc" class="text-text-muted mb-4">Building autonomous drone prototypes using ESP32-CAM, Arduino, and Python, focusing on combining embedded systems with intelligent controls and real-world sensing.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Robotics</span>
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Arduino/ESP32</span>
+                            <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full border border-primary/20">Embedded AI</span>
+                        </div>
+                        <a href="#" data-i18n="project3_link" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+                            View Robotics Work
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-20">
+            <h2 data-i18n="contact_title" class="text-4xl font-bold mb-10 section-heading text-secondary">Get In Touch</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <div class="glass-card p-8 rounded-xl shadow-2xl lg:col-span-1">
+                    <h3 data-i18n="contact_info_title" class="text-2xl font-semibold mb-4 text-primary">Contact Information</h3>
+                    <p data-i18n="contact_info_p" class="text-text-dark mb-6">I am currently seeking opportunities to collaborate on projects involving AI, robotics, and human-machine interaction. Let's connect!</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:kyawkhaingtun04@icloud.com" class="text-text-dark hover:text-primary transition duration-300">kyawkhaingtun04@icloud.com</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:kd1427178@st.kobedenshi.ac.jp" class="text-text-dark hover:text-primary transition duration-300">kd1427178@st.kobedenshi.ac.jp</a>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5l1.5 4.5L7 11.5l-2.5 2.5a15.045 15.045 0 007 7l2.5-2.5 4.5 1.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                            <a href="tel:+818064254072" class="text-text-dark hover:text-primary transition duration-300">080-6425-4072 (JP)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-xl shadow-2xl lg:col-span-2">
+                    <h3 data-i18n="contact_form_title" class="text-2xl font-semibold mb-4 text-primary">Send a Message</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" data-i18n="form_label_name" class="block text-sm font-medium text-text-muted mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg bg-white/50 border border-primary/20 focus:border-primary focus:ring-primary transition duration-300 text-text-dark placeholder-text-muted">
+                        </div>
+                        <div>
+                            <label for="email" data-i18n="form_label_email" class="block text-sm font-medium text-text-muted mb-1">Your Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg bg-white/50 border border-primary/20 focus:border-primary focus:ring-primary transition duration-300 text-text-dark placeholder-text-muted">
+                        </div>
+                        <div>
+                            <label for="message" data-i18n="form_label_message" class="block text-sm font-medium text-text-muted mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 rounded-lg bg-white/50 border border-primary/20 focus:border-primary focus:ring-primary transition duration-300 text-text-dark placeholder-text-muted"></textarea>
+                        </div>
+                        <button type="submit" data-i18n="form_btn_submit" class="w-full px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.01]">
+                            Send Message
+                        </button>
+                        <p id="formMessage" class="text-center mt-4 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-secondary/10 mt-12 py-8 border-t border-primary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted">
+            <p>&copy; 2024 Kyaw Khaing Tun. <span data-i18n="footer_copyright">All rights reserved. | Built with Tailwind CSS.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Localization Data ---
+        const translations = {
+            'en': {
+                'title_suffix_full': 'Kyaw Khaing Tun - Professional Portfolio',
+                'nav_name': 'Kyaw Khaing Tun',
+                'nav_about': 'Vision',
+                'nav_skills': 'Skills',
+                'nav_projects': 'Projects',
+                'nav_contact': 'Contact',
+                'hero_greeting': "Hello, I'm",
+                'hero_title': 'Kyaw Khaing Tun',
+                'hero_subtitle': 'AI Developer / Robotics Enthusiast',
+                'hero_bio': "Aspiring AI & Software Engineer focused on building interactive AI systems, robotics, and real-world automation tools that combine programming, sensors, and intelligent user experiences.",
+                'hero_btn_projects': 'View Projects',
+                'hero_btn_contact': 'Get In Touch',
+                'about_title': 'Vision & Background',
+                'about_p1': "Born in the Sagaing Region of Myanmar, I came to Japan to pursue advanced studies in IT at Kobe Denshi College. My journey taught me independence, creativity, and the importance of creating real-world, helpful solutions that benefit people.",
+                'about_p2': "My vision is to build AI systems that can see, understand, and communicate naturally, connecting physical robots with intelligent cloud systems. I believe the future belongs to AI that exists in the real world — not just in the cloud, but beside us.",
+                'skills_title': 'Core Expertise & Tools',
+                'project_title': 'Featured Project: SUZI AI & Work',
+                'project1_title': 'SUZI AI — Bilingual Voice Assistant',
+                'project1_desc': 'A bilingual (English/Japanese) voice-based AI assistant with real-time face recognition memory, hand-tracking commands, emotion detection, and a cloud-connected information center system.',
+                'project1_link': 'See Core Features',
+                'project2_title': 'Interactive UI & Automation Tools',
+                'project2_desc': 'Development of interactive UI systems using Python (Tkinter), real-time camera overlays, and animated interfaces for information centers, restaurants, and business tools.',
+                'project2_link': 'View Details',
+                'project3_title': 'Embedded AI & Robotics Prototypes',
+                'project3_desc': 'Building autonomous drone prototypes using ESP32-CAM, Arduino, and Python, focusing on combining embedded systems with intelligent controls and real-world sensing.',
+                'project3_link': 'View Robotics Work',
+                'contact_title': 'Get In Touch',
+                'contact_info_title': 'Contact Information',
+                'contact_info_p': "I am currently seeking opportunities to collaborate on projects involving AI, robotics, and human-machine interaction. Let's connect!",
+                'contact_form_title': 'Send a Message',
+                'form_label_name': 'Your Name',
+                'form_label_email': 'Your Email',
+                'form_label_message': 'Message',
+                'form_btn_submit': 'Send Message',
+                'form_msg_success': 'Thank you for your message! I will get back to you soon.',
+                'footer_copyright': 'All rights reserved. | Built with Tailwind CSS.',
+                'toggle_text': 'JP' // Text shown on the button to switch to Japanese
+            },
+            // --- FIXED: Replaced corrupted Japanese translations with accurate text ---
+            'ja': {
+                'title_suffix_full': 'チョウ・カイン・トゥン - プロフェッショナルポートフォリオ',
+                'nav_name': 'チョウ・カイン・トゥン',
+                'nav_about': 'ビジョン',
+                'nav_skills': 'スキル',
+                'nav_projects': 'プロジェクト',
+                'nav_contact': 'コンタクト',
+                'hero_greeting': 'こんにちは、',
+                'hero_title': 'チョウ・カイン・トゥン',
+                'hero_subtitle': 'AI開発者 / ロボット工学愛好家',
+                'hero_bio': 'プログラミング、センサー、インテリジェントなユーザー体験を組み合わせた、AIシステム、ロボット工学、実世界での自動化ツール構築に注力しているAIエンジニア志望です。',
+                'hero_btn_projects': 'プロジェクトを見る',
+                'hero_btn_contact': 'お問い合わせ',
+                'about_title': 'ビジョンと背景',
+                'about_p1': 'ミャンマーのザガイン地域出身で、高度なIT学習のため神戸電子専門学校に来日しました。この旅を通じて、独立心、創造性、そして人々に役立つ実用的なソリューションを生み出すことの重要性を学びました。',
+                'about_p2': '私のビジョンは、物理的なロボットとインテリジェントなクラウドシステムを接続し、見て、理解し、自然にコミュニケーションできるAIシステムを構築することです。未来は、クラウド上だけでなく、私たちの隣に存在するAIにあると信じています。',
+                'skills_title': '主要スキルとツール',
+                'project_title': '注目プロジェクト: SUZI AIとその他',
+                'project1_title': 'SUZI AI — バイリンガル音声アシスタント',
+                'project1_desc': 'リアルタイム顔認識、ハンドトラッキングコマンド、感情検出機能を備えた、クラウド接続型のバイリンガル（英語/日本語）音声AIアシスタントです。',
+                'project1_link': 'コア機能を見る',
+                'project2_title': '対話型UIと自動化ツール',
+                'project2_desc': '情報センター、レストラン、ビジネス向けツールのための、Python (Tkinter)、リアルタイムカメラオーバーレイ、アニメーションインターフェースを用いた対話型UIシステムの開発。',
+                'project2_link': '詳細を見る',
+                'project3_title': '組み込みAIとロボット工学プロトタイプ',
+                'project3_desc': 'ESP32-CAM、Arduino、Pythonを使用して、組み込みシステムとインテリジェント制御、実世界センシングを組み合わせることに焦点を当てた自律型ドローンプロトタイプの構築。',
+                'project3_link': 'ロボット工学の作業を見る',
+                'contact_title': 'お問い合わせ',
+                'contact_info_title': '連絡先情報',
+                'contact_info_p': '現在、AI、ロボット工学、ヒューマンマシンインタラクションに関わるプロジェクトでの協業の機会を探しています。ぜひご連絡ください！',
+                'contact_form_title': 'メッセージを送る',
+                'form_label_name': 'お名前',
+                'form_label_email': 'メールアドレス',
+                'form_label_message': 'メッセージ',
+                'form_btn_submit': 'メッセージを送信',
+                'form_msg_success': 'メッセージありがとうございます！近日中に折り返しご連絡いたします。',
+                'footer_copyright': '全著作権所有。 | Tailwind CSSで構築。',
+                'toggle_text': 'EN' // Text shown on the button to switch to English
+            }
+        };
+
+        let currentLang = 'en'; // Default language
+
+        /**
+         * Switches the language of the entire document.
+         * @param {string} lang - The target language ('en' or 'ja').
+         */
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[currentLang];
+            
+            // 1. Update all elements with data-i18n attributes
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (t[key] !== undefined) { // Check for existence and valid text
+                    if (key === 'title_suffix_full' && element.tagName === 'TITLE') {
+                        element.textContent = t[key];
+                    } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = t[key];
+                    } else if (element.tagName === 'LABEL') {
+                         element.textContent = t[key];
+                    } else {
+                        element.textContent = t[key];
+                    }
+                }
+            });
+
+            // 2. Update the language toggle button text
+            const toggleButton = document.getElementById('languageToggle');
+            toggleButton.textContent = currentLang === 'en' ? 'JP' : 'EN';
+            document.documentElement.lang = lang; // Set HTML language attribute
+        }
+
+        // --- Event Listeners ---
+
+        document.getElementById('languageToggle').addEventListener('click', () => {
+            const newLang = currentLang === 'en' ? 'ja' : 'en';
+            setLanguage(newLang);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+             // Initialize default English texts on load
+             setLanguage('en'); 
+        });
+
+        // --- Contact Form Submission Handler ---
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formMessage = document.getElementById('formMessage');
+            
+            const successMessage = translations[currentLang]['form_msg_success'];
+
+            // Display success message
+            formMessage.textContent = successMessage;
+            formMessage.classList.remove('hidden', 'text-red-400');
+            formMessage.classList.add('text-green-700', 'p-2', 'bg-green-100', 'rounded-lg');
+            
+            // Clear the form fields after a slight delay
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+            }, 2000);
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
